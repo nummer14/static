@@ -1,16 +1,16 @@
-interface Greeting {
-    void greet();
+interface Calculator {
+    int compute(int a, int b);
 }
 
 public class Main {
     public static void main(String[] args) {
-        Greeting greeting = new Greeting() {
+        Calculator mul = new Calculator() {
             @Override
-            public void greet() {
-                System.out.println("Hello from the anonymous class!");
+            public int compute(int a, int b) {
+                return a * b;
             }
         };
 
-        greeting.greet();
+        System.out.println(mul.compute(3, 4));
     }
 }
