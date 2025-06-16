@@ -1,20 +1,27 @@
-public class Outer {
-    private String message = "Hello from the outer class.";
+class Car {
+    String brand;
+    Engine engine;
 
-    class InnerClass {
-        void displayMessage() {
-            System.out.println("Inner says: " + message);
+    public Car(String brand) {
+        this.brand = brand;
+        this.engine = new Engine();
+    }
+
+    class Engine {
+        public void start() {
+            System.out.println("The engine of " + brand + " is starting.");
         }
     }
 
-    public void callInner() {
-        InnerClass inner = new InnerClass();
-        inner.displayMessage();
+    public void startEngine() {
+        engine.start();
     }
+}
 
+public class Main {
     public static void main(String[] args) {
-        Outer outer = new Outer();
+        Car car = new Car("빠른자동차");
 
-        outer.callInner();
+        car.startEngine();
     }
 }
